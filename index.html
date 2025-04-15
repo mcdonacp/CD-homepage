@@ -18,7 +18,15 @@
 <body>
     <script src="https://customerdriven.boost.ai/chatPanel/chatPanel.js"></script>
 <script>
-  var boost = window.boostInit("customerdriven");
+  var boost = window.boostInit("hif", {
+  chatPanel: {
+    settings: {
+      openTextLinksInNewTab: True,
+      },
+    },
+  
+  });
 </script>
+
 </body>
 </html>
