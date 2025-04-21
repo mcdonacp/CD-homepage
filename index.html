@@ -15,17 +15,19 @@
         }
     </style>
 </head>
-<body>
     <script src="https://customerdriven.boost.ai/chatPanel/chatPanel.js"></script>
+<body>
+ <button type="button" onclick="javascript:openChat()">Open chat</button>
 <script>
-  var boost = window.boostInit("hif", {
+  var options = { chatPanel: {
   chatPanel: {
     settings: {
       openTextLinksInNewTab: True,
       },
     },
+  })};
+  var boost = window.boostInit("customerdriven", options)
   
-  });
 </script>
 
 </body>
