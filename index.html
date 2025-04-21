@@ -14,23 +14,28 @@
             background-size: cover;
         }
     </style>
-</head>
-    <script src="https://customerdriven.boost.ai/chatPanel/chatPanel.js"></script>
-<body>
- <button type="button" onclick="javascript:openChat()">Open chat</button>
-<script>
-  var options = { chatPanel: {
-  chatPanel: {
-    settings: {
-      openTextLinksInNewTab: True,
-      },
-    },
-  })};
-  var boost = window.boostInit("customerdriven", options)
-   function openChat() {
+<script src="https://customerdriven.boost.ai/chatPanel/chatPanel.js"></script>
+  </head>
+  <body>
+    <button type="button" onclick="javascript:openChat()">Open chat</button>
+
+    <script>
+      var options = {
+        chatPanel: {
+          header: {
+            title: "My chat panel",
+          },
+          styling: {
+            pace: "supersonic",
+          },
+        },
+      };
+      var boost = window.boostInit("customerdriven", options);
+
+      function openChat() {
         boost.chatPanel.show();
       }
-</script>
+    </script>
 
 </body>
 </html>
