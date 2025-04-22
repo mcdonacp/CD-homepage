@@ -16,19 +16,20 @@
 <script src="https://customerdriven.boost.ai/chatPanel/chatPanel.js"></script>
   </head>
   <body>
-      <button type="button" onclick="javascript:openChat()">Open chat</button>
+     <button type="button" onclick="javascript:openChat()">Open chat</button>
+
     <script>
       var options = {
         chatPanel: {
-            header: {
-            title: "CD Assistant",
-            },
-            styling: {
-                pace: "supersonic",
-            },
-            settings: {
-                openTextLinksInNewTab: True,
-            },
+          header: {
+            title: "My chat panel",
+          },
+          styling: {
+            pace: "supersonic",
+          },
+          settings: {
+              openTextLinksInNewTab: True,
+          },
         },
       };
       var boost = window.boostInit("customerdriven", options);
