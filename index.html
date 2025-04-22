@@ -19,8 +19,6 @@
 <script src="https://customerdriven.boost.ai/chatPanel/chatPanel.js"></script>
   </head>
   <body>
-     <button type="button" display: none onclick="javascript:openChat()">Open chat</button>
-
     <script>
       var options = {
         chatPanel: {
@@ -32,10 +30,6 @@
         },
       };
       var boost = window.boostInit("customerdriven", options);
-
-      function openChat() {
-        boost.chatPanel.show();
-      }
     </script>
 
 </body>
