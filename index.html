@@ -36,7 +36,7 @@
     const hour = melbourneNow.getHours(); // 0–23
 
     const isWeekday = day >= 1 && day <= 5; // Mon–Fri
-    const isBusinessHours = hour >= 9 && hour < 17; // 9am–5pm
+    const isBusinessHours = hour >= 9 && hour < 15; // 9am–5pm
 
     if (isWeekday && isBusinessHours) {
       var options = {
