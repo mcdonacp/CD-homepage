@@ -14,21 +14,46 @@
         }
     </style>
 <script src="https://customerdriven.boost.ai/chatPanel/chatPanel.js"></script>
-  </head>
-  <body>
-    <script>
+</head>
+<body>
+<script>
+  (function () {
+    // Get current date/time in Melbourne timezone
+    const melbourneNow = new Date(
+      new Intl.DateTimeFormat("en-AU", {
+        timeZone: "Australia/Melbourne",
+        hour12: false,
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      }).format(new Date())
+    );
+
+    const day = melbourneNow.getDay();   // 0 = Sun, 1 = Mon, ... 6 = Sat
+    const hour = melbourneNow.getHours(); // 0–23
+
+    const isWeekday = day >= 1 && day <= 5; // Mon–Fri
+    const isBusinessHours = hour >= 9 && hour < 17; // 9am–5pm
+
+    if (isWeekday && isBusinessHours) {
       var options = {
         chatPanel: {
           styling: {
-              chatBubbles: { 
-                  //userTextColor: "#FFFFFF",
-                  //vaTextColor: "#FFFFFF"
-              },
-          },
-        },
+            chatBubbles: {
+              // userTextColor: "#FFFFFF",
+              // vaTextColor: "#FFFFFF"
+            }
+          }
+        }
       };
-      var boost = window.boostInit("customerdriven", options);
-    </script>
+
+      window.boostInit("customerdriven", options);
+    }
+  })();
+</script>
 
 </body>
 </html>
